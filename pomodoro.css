@@ -171,7 +171,15 @@ body {
     margin-bottom: 10px;
 }
 
+/* buttons */
+
 button {
+    display: inline-block;
+    min-width: 100px;
+    outline: none;
+    cursor: pointer;
+    color: var(--title-primary-color);
+    font-family: 'Roboto', sans-serif;
     border: none;
     padding: 10px 12px;
     border-radius: 6px;
