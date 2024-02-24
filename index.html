@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="./pomodoro.css">
 
-    <title>Pomodoro App</title>
+    <title>Pomodoro</title>
 
 </head>
 
@@ -26,21 +26,20 @@
         <div class="card">
 
             <div class="card-header">
-                <h1>Pomodoro Timer</h1>
+
                 <div class="card-header-buttons">
 
-                    <button id="buttonTypePomodoro"
-                            class="active" 
-                            onclick="setPomodoroType(TIMER_TYPE_POMODORO);">
-                            Pomodoro
+                    <button id="buttonTypePomodoro" class="active" onclick="setPomodoroType(TIMER_TYPE_POMODORO);">
+                        Pomodoro
                     </button>
 
-                    <button id="buttonTypeShortBreak"
-                            onclick="setPomodoroType(TIMER_TYPE_SHORT_BREAK);">
-                        Short Break
+                    <button id="buttonTypeShortBreak" onclick="setPomodoroType(TIMER_TYPE_SHORT_BREAK);">
+                        Intervalo
                     </button>
-
                 </div>
+
+
+
             </div>
 
             <div class="card-body">
@@ -53,11 +52,18 @@
 
             </div>
 
-            <div class="card-footer">
-
-                <button class="btn-sucess" onclick="startTimer();">Start</button>
-                <button class="btn-danger" onclick="stopTimer();">Stop</button>
-                <button onclick="resetTimer();">Reset</button>
+            <div class="container-inputs">
+                <div class="card-header-inputs">
+                    <form action="" id="form-inputs">
+                        <label for="input">Pomodoro:</label>
+                        <input id="input-pomodoro" type="number" placeholder="Insira o tempo de concentração" required>
+                        <label for="input">Intervalo:</label>
+                        <input id="input-short-break" type="number" placeholder="Inisira o tempo de Intervalo" required>
+                    </form>
+                </div>
+                <button class="btn-sucess" id="buttonStart" type="submit">iniciar</button>
+                <button class="btn-danger" id="buttonStop">parar</button>
+                <button class="btn-reset" id="buttonReset">reiniciar</button>
 
             </div>
 
