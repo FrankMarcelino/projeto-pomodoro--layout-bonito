@@ -11,18 +11,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnStopTimer = document.querySelector("#buttonStop");
     const btnResetTimer = document.querySelector("#buttonReset");
 
+    const displayPeriods = document.querySelector("#periods");
+    const inputPeriod = document.querySelector("#input-period");
+    let count = inputPeriod.value
+
+
 
 
     formInputs.addEventListener("submit", (event) => {
         event.preventDefault();
 
+   
         let pomodoroTimerInSeconds = 0;
         let shortBreakTimerInSeconds = 0;
         const pomodoro = parseFloat(document.getElementById("input-pomodoro").value);
         const shortBreak = parseFloat(document.getElementById("input-short-break").value);
         pomodoroTimerInSeconds = pomodoro * 60;
         shortBreakTimerInSeconds = shortBreak * 60;
-        console.log(pomodoroTimerInSeconds, shortBreakTimerInSeconds);
+      
 
         const TIMER_TYPE_POMODORO = 'POMODORO';
         const TIMER_TYPE_SHORT_BREAK = 'SHORTBREAK';
@@ -31,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let pomodoroType = TIMER_TYPE_POMODORO;
         let timerValue = pomodoroTimerInSeconds;
         let multiplierFactor = 360 / timerValue;
-        console.log(timerValue)
+
 
         function formatNumberInStringMinute(number) {
 
@@ -46,7 +52,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
+        function modifyPeriods(periods) {
+            displayPeriods.textContent = `${periods}/${count}`
+            count--
+        }
 
+        modifyPeriods(inputPeriod.value)
         const startTimer = () => {
             progressInterval = setInterval(() => {
                 timerValue--;
